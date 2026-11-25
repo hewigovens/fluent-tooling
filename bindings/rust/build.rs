@@ -15,10 +15,14 @@ fn main() {
 
     let mut build = cc::Build::new();
     build
+        .std("c11")
         .include(&source_dir)
         .file(source_dir.join("parser.c"))
         .file(source_dir.join("scanner.c"))
         .warnings(true);
+    if std::env::var("CARGO_CFG_TARGET_ENV").as_deref() == Ok("msvc") {
+        build.flag("-utf-8");
+    }
     if std::env::var_os("FLUENT_SCANNER_DEBUG").is_some() {
         build.define("FLUENT_IS_DEBUG", None);
     }

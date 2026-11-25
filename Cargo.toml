@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-fluent"
 description = "Editor-oriented Tree-sitter grammar for Fluent FTL"
-version = "0.1.0"
+version = "0.1.1"
 keywords = ["tree-sitter", "fluent", "ftl", "parser", "incremental"]
 categories = ["parser-implementations", "text-editors", "localization"]
 authors.workspace = true
