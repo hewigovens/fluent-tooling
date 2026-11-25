@@ -1,5 +1,5 @@
 use std::fs;
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 
 use serde_json::Value;
 use tree_sitter::{InputEdit, Node, Parser, Point, Query, Tree};
@@ -24,7 +24,7 @@ fn parse(source: &str) -> Tree {
 }
 
 fn repository_root() -> PathBuf {
-    Path::new(env!("CARGO_MANIFEST_DIR")).join("../..")
+    PathBuf::from(env!("CARGO_MANIFEST_DIR"))
 }
 
 fn collect_nodes<'tree>(node: Node<'tree>, kind: &str, nodes: &mut Vec<Node<'tree>>) {

@@ -1,5 +1,5 @@
 fn main() {
-    let grammar_root = std::path::Path::new("../..");
+    let grammar_root = std::path::Path::new(".");
     let source_dir = grammar_root.join("src");
 
     println!(

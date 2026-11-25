@@ -20,7 +20,7 @@ All commands below assume this shell unless shown with `nix develop --command`.
 |`grammar.js`, `src/`, `queries/`
 |Grammar definition, generated parser, scanner, and queries
 
-|`crates/tree-sitter-fluent/`
+|`bindings/rust/`
 |Rust grammar bindings and parser tests
 
 |`crates/fluent-lint/`

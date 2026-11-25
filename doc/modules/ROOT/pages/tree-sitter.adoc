@@ -53,13 +53,13 @@ The public constants are:
 |`queries/highlights.scm`
 |===
 
-An external Cargo project can depend on the repository directly:
+An external Cargo project can depend on the crate from crates.io:
 
 [source,toml]
 ----
 [dependencies]
 tree-sitter = "0.25"
-tree-sitter-fluent = { git = "https://github.com/outskirtslabs/fluent-tooling" }
+tree-sitter-fluent = "0.1"
 ----
 
 == Grammar behavior

@@ -17,4 +17,4 @@ codespan-reporting.workspace = true
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 tree-sitter.workspace = true
-tree-sitter-fluent = { path = "../tree-sitter-fluent" }
+tree-sitter-fluent = { path = "../.." }

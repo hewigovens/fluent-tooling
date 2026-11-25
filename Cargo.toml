@@ -1,7 +1,49 @@
+[package]
+name = "tree-sitter-fluent"
+description = "Editor-oriented Tree-sitter grammar for Fluent FTL"
+version = "0.1.0"
+keywords = ["tree-sitter", "fluent", "ftl", "parser", "incremental"]
+categories = ["parser-implementations", "text-editors", "localization"]
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+build = "bindings/rust/build.rs"
+include = [
+  "bindings/rust/build.rs",
+  "bindings/rust/lib.rs",
+  "src/parser.c",
+  "src/scanner.c",
+  "src/node-types.json",
+  "src/tree_sitter/*.h",
+  "queries/*.scm",
+  "LICENSE",
+  "NOTICE.md",
+  "licenses/tree-sitter-fluent-new-MIT.txt",
+]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[[test]]
+name = "parser"
+path = "bindings/rust/tests/parser.rs"
+
+[dependencies]
+tree-sitter-language.workspace = true
+
+[dev-dependencies]
+serde_json = "1.0"
+tree-sitter.workspace = true
+
+[build-dependencies]
+cc = "1.2"
+
 [workspace]
 members = [
+  ".",
   "crates/fluent-lint",
-  "crates/tree-sitter-fluent",
 ]
 resolver = "2"
 
@@ -9,7 +51,7 @@ resolver = "2"
 authors = ["Casey Link <casey@outskirtslabs.com>"]
 edition = "2024"
 license = "MIT"
-repository = "https://github.com/outskirtslabs/fluent-tooling"
+repository = "https://github.com/hewigovens/fluent-tooling"
 rust-version = "1.85"
 version = "0.0.1"
 
